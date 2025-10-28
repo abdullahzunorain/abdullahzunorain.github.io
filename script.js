@@ -145,4 +145,40 @@ sections.forEach((sec) => {
   observer.observe(sec);
 });
 
+// Project filter tabs
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tag = btn.dataset.filter;
+    projectCards.forEach(card => {
+      if (tag === 'all' || (card.dataset.tags && card.dataset.tags.includes(tag))) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+// Project modals
+function setupModal(id) {
+  const modal = document.getElementById('modal-' + id);
+  document.querySelectorAll(`[data-modal="${id}"]`).forEach(btn => btn.addEventListener('click', () => { modal.showModal(); }));
+  if (modal) {
+    modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
+    modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+  }
+}
+setupModal('pea-cnn');
+setupModal('weather-outfit');
+// Animate skill bars
+function animateBars() {
+  document.querySelectorAll('.bar span').forEach(bar => {
+    bar.style.width = bar.style.getPropertyValue('--val') || '80%';
+  });
+}
+window.addEventListener('DOMContentLoaded', animateBars);
+
 

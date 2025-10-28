@@ -125,37 +125,25 @@
       <section id="experience" class="section" aria-label="Work experience">
         <div class="container">
           <h2>Experience</h2>
-          <ol class="timeline">
+          <ol class="timeline polished-timeline">
             <li class="timeline-item">
-              <div class="timeline-meta">Oct 2024 – Feb 2025</div>
+              <div class="timeline-meta"><strong>2024–Present</strong></div>
               <div class="timeline-content">
-                <h3>PakAngels — Gen‑AI Trainee</h3>
+                <h3>PakAngels – Gen-AI Trainee</h3>
                 <ul>
-                  <li>Built interactive Streamlit apps for text analysis, image processing, and weather‑based recommendations.</li>
-                  <li>Designed educational chatbots using LLaMA with advanced UIs.</li>
+                  <li>✅ Working on chatbot and edge-AI solutions using LLaMA and Groq.</li>
+                  <li>• Tech: Python, Streamlit, LLaMA, Groq API</li>
                 </ul>
               </div>
             </li>
             <li class="timeline-item">
-              <div class="timeline-meta">Jan 2024 – Sep 2024</div>
+              <div class="timeline-meta"><strong>2023</strong></div>
               <div class="timeline-content">
-                <h3>atomcamp — Data Science & AI Trainee</h3>
+                <h3>Chip Soul Technology – Embedded Systems Trainee</h3>
                 <ul>
-                  <li>Performed data cleaning/wrangling using Excel, Power BI, SQL, and Python.</li>
-                  <li>Delivered CV projects: Pea Plant Disease Detection (CNN/VGG16), Cardiac Disease, Brain Tumor Detection.</li>
-                  <li>Developed NLP models for text classification and sentiment analysis.</li>
-                  <li>Used LLMs (LLaMA, Bard via Groq API) to build chatbots incl. voice interactions.</li>
-                  <li>Packaged apps with Docker; deployed via Streamlit/Gradio; used Hugging Face & GitHub.</li>
-                </ul>
-              </div>
-            </li>
-            <li class="timeline-item">
-              <div class="timeline-meta">Jul 2023 – Sep 2023</div>
-              <div class="timeline-content">
-                <h3>CISNR — AI Intern</h3>
-                <ul>
-                  <li>Collaborated on a US‑based project; performed image annotation with LabelImg/labelMe.</li>
-                  <li>Contributed to plant disease detection using YOLOv5/YOLOv8.</li>
+                  <li>Hands-on with STM32 and 8051 microcontrollers.</li>
+                  <li>EEPROM interfacing, temperature sensor calibration.</li>
+                  <li>Tech: C++, Embedded C, I2C, I2C, Python</li>
                 </ul>
               </div>
             </li>
@@ -165,16 +153,59 @@
 
       <section id="education" class="section" aria-label="Education">
         <div class="container">
-          <h2>Education</h2>
-          <div class="edu">
+          <h2>Education & Certifications</h2>
+          <div class="edu polished-timeline">
             <div class="edu-item">
-              <h3>University of Engineering and Technology Peshawar</h3>
-              <p>BS Electrical Engineering (Communication) — CGPA 3.21/4.0</p>
-              <p class="muted">Sep 2019 – Oct 2023</p>
+              <div class="edu-badge"></div>
+              <h3>B.Sc Electrical Engineering – UET Peshawar <small>(2023)</small></h3>
+              <ul>
+                <li>Key Courses: Digital Systems, Control, Embedded, DSP</li>
+              </ul>
             </div>
             <div class="edu-item">
-              <h3>WorldQuant University</h3>
-              <p>Applied Data Science Lab — <a href="https://www.credly.com/badges/37435368-b8a1-47d2-8889-65d279984fe3" target="_blank" rel="noopener" aria-label="Applied Data Science Lab certificate link">Certificate</a></p>
+              <div class="edu-badge"></div>
+              <h3>AI & Data Science Bootcamp – Atomcamp</h3>
+              <ul>
+                <li>Deep Learning, ML, NLP, Computer Vision</li>
+              </ul>
+            </div>
+            <div class="edu-item">
+              <div class="edu-badge"></div>
+              <h3>Online – Coursera & WorldQuant</h3>
+              <ul>
+                <li>Machine Learning (Andrew Ng), IBM Data Science, Generative AI, Python</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-label="Skills">
+        <div class="container">
+          <h2>Skills Matrix</h2>
+          <div class="skills-matrix">
+            <div class="skill-group">
+              <h3>Programming</h3>
+              <div class="bar"><span style="--val:90%">Python</span></div>
+              <div class="bar"><span style="--val:80%">C++ / Embedded C</span></div>
+              <div class="bar"><span style="--val:75%">SQL</span></div>
+            </div>
+            <div class="skill-group">
+              <h3>AI / ML</h3>
+              <div class="bar"><span style="--val:85%">PyTorch</span></div>
+              <div class="bar"><span style="--val:80%">TensorFlow</span></div>
+              <div class="bar"><span style="--val:88%">NLP / CV</span></div>
+            </div>
+            <div class="skill-group">
+              <h3>Hardware</h3>
+              <div class="bar"><span style="--val:70%">STM32 / 8051</span></div>
+              <div class="bar"><span style="--val:72%">I2C / SPI</span></div>
+            </div>
+            <div class="skill-group">
+              <h3>Tools</h3>
+              <div class="bar"><span style="--val:85%">Git / GitHub</span></div>
+              <div class="bar"><span style="--val:78%">MATLAB / Jupyter</span></div>
+              <div class="bar"><span style="--val:80%">Streamlit / HF</span></div>
             </div>
           </div>
         </div>
@@ -182,9 +213,16 @@
 
       <section id="projects" class="section" aria-label="Selected projects">
         <div class="container">
-          <h2>Projects</h2>
+          <h2>Projects that Define My Craft</h2>
+          <div class="project-filters" role="tablist" aria-label="Project filters">
+            <button class="filter-btn active" data-filter="all" role="tab">All</button>
+            <button class="filter-btn" data-filter="ai" role="tab">AI</button>
+            <button class="filter-btn" data-filter="streamlit" role="tab">Streamlit Apps</button>
+            <button class="filter-btn" data-filter="embedded" role="tab">Embedded Systems</button>
+          </div>
           <div class="projects-grid">
-            <article class="project-card project-card--spotlight">
+            <article class="project-card project-card--spotlight" data-tags="ai">
+              <img class="project-thumb" src="assets/images/pea-cnn.png" alt="Pea Plant Quality" />
               <div class="project-card__body">
                 <h3>Pea Plant Quality Assessment (Custom CNN)</h3>
                 <ul>
@@ -195,47 +233,67 @@
               </div>
               <div class="project-card__footer">
                 <a class="btn btn-sm btn-ghost" href="https://github.com/abdullahzunorain/Pea_Plant_Quality_Assessment_using_custom_CNN" target="_blank" rel="noopener">GitHub</a>
+                <button class="btn btn-sm open-modal" data-modal="pea-cnn">Overview</button>
               </div>
             </article>
-            <article class="project-card">
+            <article class="project-card" data-tags="streamlit ai">
+              <img class="project-thumb" src="assets/images/weather-app.png" alt="Weather-Based Outfit" />
               <div class="project-card__body">
                 <h3>Weather‑Based Outfit Suggestion</h3>
                 <p>Streamlit app recommending outfits using OpenWeather data, time, and preferences.</p>
               </div>
               <div class="project-card__footer">
-                <a class="btn btn-sm" href="https://huggingface.co/spaces/abdullahzunorain/Weather-Based-Outfit-Suggestion-App" target="_blank" rel="noopener" aria-label="Live Weather Outfit app">Live</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/abdullahzunorain" target="_blank" rel="noopener">Code</a>
+                <a class="btn btn-sm" href="https://huggingface.co/spaces/abdullahzunorain/Weather-Based-Outfit-Suggestion-App" target="_blank" rel="noopener">Live</a>
+                <button class="btn btn-sm open-modal" data-modal="weather-outfit">Overview</button>
               </div>
             </article>
-            <article class="project-card">
+            <article class="project-card" data-tags="streamlit ai">
+              <img class="project-thumb" src="assets/images/tomato-cnn.png" alt="Tomato Leaf Disease" />
               <div class="project-card__body">
                 <h3>Tomato Leaf Disease App</h3>
                 <p>CNN-based detector packaged as a Streamlit app for fast plant diagnosis.</p>
               </div>
               <div class="project-card__footer">
                 <a class="btn btn-sm" href="https://huggingface.co/spaces/abdullahzunorain/tomato-leaf-disease-app" target="_blank" rel="noopener">Live</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/abdullahzunorain" target="_blank" rel="noopener">Code</a>
               </div>
             </article>
-            <article class="project-card">
+            <article class="project-card" data-tags="streamlit ai">
+              <img class="project-thumb" src="assets/images/text-classifier.png" alt="Text Classification App" />
               <div class="project-card__body">
                 <h3>Text Classification App</h3>
                 <p>Sentiment analysis text analyzer with a clean, responsive UI.</p>
               </div>
               <div class="project-card__footer">
                 <a class="btn btn-sm" href="https://huggingface.co/spaces/abdullahzunorain/Text_Classification_App" target="_blank" rel="noopener">Live</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/abdullahzunorain" target="_blank" rel="noopener">Code</a>
               </div>
             </article>
-            
-            
-            
-            
-            
-            
           </div>
         </div>
       </section>
+
+      <!-- Modals for project details -->
+      <dialog id="modal-pea-cnn" class="modal">
+        <div class="modal-inner">
+          <button class="modal-close" aria-label="Close">✕</button>
+          <h3>Pea Plant Quality Assessment — Overview</h3>
+          <ul>
+            <li>Architecture: Custom CNN vs VGG16/YOLO baselines</li>
+            <li>Tech: Python, TensorFlow/Keras, OpenCV</li>
+            <li>Outcome: High accuracy across test sets with robust augmentation</li>
+          </ul>
+        </div>
+      </dialog>
+      <dialog id="modal-weather-outfit" class="modal">
+        <div class="modal-inner">
+          <button class="modal-close" aria-label="Close">✕</button>
+          <h3>Weather-Based Outfit Suggestion — Overview</h3>
+          <ul>
+            <li>Full Streamlit app with OpenWeather integration</li>
+            <li>User experience: personalized, location-aware suggestions</li>
+            <li>Technologies: Python, Streamlit, OpenWeather API</li>
+          </ul>
+        </div>
+      </dialog>
 
       <section id="certificates" class="section" aria-label="Certificates">
         <div class="container">
@@ -288,6 +346,7 @@
       <section id="contact" class="section" aria-label="Contact form">
         <div class="container">
           <h2>Contact</h2>
+          <p class="muted">Got a project or opportunity? Let’s build something that matters.</p>
           <form id="contact-form" class="contact-form" novalidate>
             <div class="form-row">
               <label for="name">Name</label>
@@ -315,7 +374,10 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Abdullah Zunorain</p>
+        <div class="footer-col">
+          <p>© <span id="year"></span> Abdullah Zunorain</p>
+          <p class="muted">Built with precision and purpose.</p>
+        </div>
         <ul class="social">
           <li><a href="mailto:abdullahzunorain2@gmail.com" aria-label="Email">Email</a></li>
           <li><a href="tel:+923363121248" aria-label="Phone">Phone</a></li>
@@ -327,6 +389,15 @@
           <li><a href="https://credly.com/users/abdullahzunorain" target="_blank" rel="noopener" aria-label="Credly">Credly</a></li>
           <li><a href="https://www.upwork.com/freelancers/~01ba6afddbba3a2c00" target="_blank" rel="noopener" aria-label="Upwork">Upwork</a></li>
           <li><a href="https://medium.com/@abdullahzunorain" target="_blank" rel="noopener" aria-label="Medium">Medium</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </footer>
