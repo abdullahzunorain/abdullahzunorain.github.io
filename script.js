@@ -181,4 +181,42 @@ function animateBars() {
 }
 window.addEventListener('DOMContentLoaded', animateBars);
 
+// Sticky header effect on scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  if (window.scrollY > 40) header.classList.add('sticky');
+  else header.classList.remove('sticky');
+});
+
+// Modal: close on ESC, focus first element
+['pea-cnn', 'weather-outfit'].forEach(id => {
+  const modal = document.getElementById('modal-' + id);
+  if (!modal) return;
+  modal.addEventListener('keydown', function(ev) {
+    if (ev.key === 'Escape') modal.close();
+  });
+  modal.addEventListener('close', function() {
+    setTimeout(() => document.activeElement.blur(), 50);
+  });
+});
+
+// Animate skill bars on section visible
+const skillsSection = document.querySelector('#skills');
+const skillBars = skillsSection?.querySelectorAll('.bar span');
+function animateSkillBars() {
+  if (!skillBars) return;
+  skillBars.forEach(bar => {
+    bar.style.width = bar.style.getPropertyValue('--val') || '85%';
+  });
+}
+if (skillsSection) {
+  const barsObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      animateSkillBars();
+      barsObs.disconnect();
+    }
+  }, {threshold: 0.4});
+  barsObs.observe(skillsSection);
+}
+
 

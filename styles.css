@@ -301,7 +301,7 @@ img, svg, video {
   justify-content: space-between;
   box-shadow: var(--shadow-1);
   transform: translateY(0);
-  transition: transform .2s ease, border-color .2s ease;
+  transition: transform .22s cubic-bezier(.42,0,.27,1.27), border-color .2s, box-shadow .18s;
 }
 
 .project-card__body h3 {
@@ -324,8 +324,10 @@ img, svg, video {
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgb(255 255 255 / 24%);
+  transform: translateY(-7px) scale(1.032);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--primary), 0 7px 36px rgba(36,77,201,0.18);
+  z-index: 1;
 }
 
 /* Timeline */
@@ -680,23 +682,17 @@ img, svg, video {
 .edu-badge { display:inline-block; width:13px; height:13px; background:var(--primary); border-radius:50%; }
 .edu-item { margin-bottom: 24px; }
 
-/* Modal styles */
+/* Modal fade+scale in */
 .modal {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  margin: auto;
-  background: #292d3e;
-  border: none;
-  border-radius: 18px;
-  padding: 37px 30px;
-  max-width: 380px;
-  width: 96vw;
-  z-index: 888;
-  color: #fff;
-  box-shadow: 0 10px 44px rgba(0,0,0,0.32);
-  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity .28s, transform .25s cubic-bezier(.6,-0.28,.74,0.05);
 }
-.modal[open], .modal.open { display: block; }
+.modal[open], .modal.open {
+  opacity: 1;
+  transform: scale(1);
+  display: block;
+}
 .modal-close {
   position: absolute;
   right: 22px;
@@ -718,4 +714,97 @@ img, svg, video {
 }
 @media (max-width: 600px) {
   .skills-matrix { grid-template-columns: 1fr; }
+}
+
+.brand-effect {
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  filter: drop-shadow(0 2px 13px rgba(108,140,255,0.36));
+  transition: text-shadow .18s;
+}
+.brand-effect:hover {
+  text-shadow: 0 0 7px var(--primary), 0 0 16px var(--accent);
+}
+
+.hero-bg-animation{
+  position: relative;
+}
+.hero-bg-animation:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0.38;
+  background:
+    radial-gradient(circle at 70% 10%, #22d3ee 0%, transparent 70%),
+    radial-gradient(circle at 30% 80%, #6c8cff 0%, transparent 65%),
+    repeating-linear-gradient(-45deg, rgba(108,140,255,0.17), rgba(34,211,238,0.11) 20px);
+  animation: hero-gradient-move 8s infinite linear;
+}
+@keyframes hero-gradient-move {
+  0% {background-position: 0% 0%, 100% 100%, 0 0;}
+  100% {background-position: 50% 60%, 40% 90%, 100px 100px;}
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-1);
+  transform: translateY(0);
+  transition: transform .22s cubic-bezier(.42,0,.27,1.27), border-color .2s, box-shadow .18s;
+}
+.project-card:hover {
+  transform: translateY(-7px) scale(1.032);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--primary), 0 7px 36px rgba(36,77,201,0.18);
+  z-index: 1;
+}
+.btn, .btn-ghost {
+  box-shadow: 0 0 0 2px var(--primary) inset,0 1px 7px rgb(22 44 120 / 13%);
+  transition: box-shadow .19s, background .17s, color .17s;
+}
+.btn:hover, .btn-ghost:hover, .btn:focus{
+  box-shadow: 0 0 0 3px var(--accent), 0 6px 18px rgb(108 140 255 / 26%);
+}
+
+/* Skill bars enhanced */
+.bar span {
+  position: relative;
+  overflow: hidden;
+}
+.bar span:after {
+  content: '';
+  position: absolute;
+  right: 0; top:0; bottom:0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.7;
+  border-radius: 7px;
+}
+
+/* Social icon hover bounce/glow */
+.social a, .footer-links a {
+  position: relative;
+  transition: color .2s, box-shadow .18s, transform .14s;
+  border-radius: 20px;
+  padding: 0 3px;
+}
+.social a:hover, .footer-links a:hover {
+  color: var(--primary);
+  box-shadow: 0 2px 11px 0 var(--primary), 0 0 3px var(--accent);
+  transform: translateY(-2px) scale(1.13);
+}
+
+.site-header.sticky {
+  background: rgba(22,33,49,0.83);
+  box-shadow: 0 2px 16px rgba(24,33,64,0.13);
+  backdrop-filter: blur(7px);
 }
