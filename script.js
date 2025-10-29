@@ -95,6 +95,32 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
+// Typing effect for hero section
+const typingText = document.querySelector('.typing-text');
+const textToType = typingText.textContent;
+typingText.textContent = '';
+
+let charIndex = 0;
+function typeText() {
+  if (charIndex < textToType.length) {
+    typingText.textContent += textToType.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText, 50);
+  }
+}
+
+// Start typing when the element is in view
+const typingObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      typeText();
+      typingObserver.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+typingObserver.observe(typingText);
+
 // Theme toggle with persistence
 function applyTheme(theme) {
   const root = document.documentElement;

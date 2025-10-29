@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=Roboto:wght@400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles-hero.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -50,23 +51,59 @@
 
     <main id="main">
       <section id="hero" class="hero" aria-label="Introduction">
-        <div class="container grid-2">
-          <div class="hero-copy">
-            <p class="eyebrow">Hello, I'm</p>
-            <h1>Abdullah Zunorain</h1>
-            <p class="lead">AI & Embedded Systems Engineer — building intelligent systems that bridge software and hardware.</p>
-            <div class="cta-group">
-              <a class="btn" href="#projects">View Projects</a>
-              <a class="btn btn-ghost" href="assets/docs/Zunorain_CVAI5MAY1PGE.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="typewriter">
+                <span class="accent-text">print</span>(<span class="string-text">"Hello, I'm!"</span>)
+              </div>
+              <h1 class="glitch-effect">Abdullah Zunorain</h1>
+              <p class="hero-tagline">
+                <span class="highlight">AI & Embedded Systems Engineer</span>
+                <span class="divider">|</span>
+                <span class="typing-text">Building intelligent systems that bridge software and hardware</span>
+              </p>
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">3+</span>
+                  <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">AI Models Deployed</span>
+                </div>
+              </div>
+              <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">
+                  <span>View Projects</span>
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </a>
+                <a href="assets/docs/Zunorain_CVAI5MAY1PGE.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+                  <span>Download CV</span>
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
+                  </svg>
+                </a>
+              </div>
             </div>
-            <div class="hero-social">
-              <a class="chip-link" href="https://github.com/abdullahzunorain" target="_blank" rel="noopener">GitHub</a>
-              <a class="chip-link" href="https://huggingface.co/abdullahzunorain" target="_blank" rel="noopener">Hugging Face</a>
-              <a class="chip-link" href="https://www.youtube.com/@abdullahzunorain" target="_blank" rel="noopener">YouTube</a>
+            <div class="hero-visual">
+              <div class="profile-wrapper">
+                <img src="assets/images/abdullah.png" alt="Abdullah Zunorain" class="profile-img" loading="lazy" />
+                <div class="tech-orbit">
+                  <span class="orbit-item" style="--i:0">Python</span>
+                  <span class="orbit-item" style="--i:1">AI</span>
+                  <span class="orbit-item" style="--i:2">ML</span>
+                  <span class="orbit-item" style="--i:3">IoT</span>
+                  <span class="orbit-item" style="--i:4">CV</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="hero-media hero-bg-animation">
-            <img src="assets/images/abdullah.png" alt="Abdullah Zunorain portrait" class="avatar-img" loading="lazy" />
           </div>
         </div>
       </section>
