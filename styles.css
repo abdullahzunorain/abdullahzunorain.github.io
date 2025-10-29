@@ -639,30 +639,113 @@ img, svg, video {
 
 .skills-matrix {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 30px;
 }
-.skill-group > h3 { font-size: 19px; margin-bottom: 10px; font-family: Poppins, Inter, Arial; }
-.bar {
-  margin-bottom: 7px;
+
+.skill-category {
   background: var(--panel);
-  border-radius: 8px;
-  height: 16px;
-  position: relative;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgb(255 255 255 / 8%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.bar span {
-  display: block;
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border-color: var(--primary);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.skill-icon {
+  font-size: 24px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(108,140,255,0.1));
+}
+
+.skill-header h3 {
+  font-size: 20px;
+  margin: 0;
+  font-family: Poppins, Inter, Arial;
+  background: linear-gradient(135deg, var(--text), var(--muted));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill-list {
+  display: grid;
+  gap: 16px;
+}
+
+.skill-item {
+  display: grid;
+  gap: 8px;
+}
+
+.skill-name {
+  font-size: 15px;
+  color: var(--muted);
+  font-family: 'Fira Code', monospace;
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
   height: 100%;
-  padding-left: 13px;
-  font-size: 14px;
-  font-family: Fira Code, monospace;
-  line-height: 16px;
-  color: var(--text);
-  background: linear-gradient(90deg, var(--primary) var(--val), var(--panel) var(--val));
-  border-radius: 8px;
-  transition: width .6s cubic-bezier(.42,0,.27,1.27);
-  width: var(--val, 80%);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  width: var(--progress);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Polished timeline (Experience & Edu) */
@@ -714,6 +797,76 @@ img, svg, video {
 }
 @media (max-width: 600px) {
   .skills-matrix { grid-template-columns: 1fr; }
+}
+
+/* New Skills Section Styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.skill-group {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-group:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.skill-group h3 {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  font-family: Poppins, Inter, Arial;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.skill-group h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: rgba(108, 140, 255, 0.1);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  border: 1px solid rgba(108, 140, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, rgba(108, 140, 255, 0.15), rgba(34, 211, 238, 0.15));
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .brand-effect {
