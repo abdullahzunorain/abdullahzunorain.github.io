@@ -799,7 +799,7 @@ img, svg, video {
   .skills-matrix { grid-template-columns: 1fr; }
 }
 
-/* New Skills Section Styles */
+/* Skills Section Styles */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -861,6 +861,12 @@ img, svg, video {
   background: linear-gradient(135deg, rgba(108, 140, 255, 0.15), rgba(34, 211, 238, 0.15));
   border-color: var(--primary);
   transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
