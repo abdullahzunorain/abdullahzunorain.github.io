@@ -95,17 +95,35 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
-// Typing effect for hero section
+// Advanced typing effect for hero section
 const typingText = document.querySelector('.typing-text');
-const textToType = typingText.textContent;
+const phrases = [
+  'Building intelligent systems that bridge software and hardware',
+  'Creating AI solutions that make a difference',
+  'Developing innovative embedded systems'
+];
+let phraseIndex = 0;
+let charIndex = 0;
 typingText.textContent = '';
 
-let charIndex = 0;
 function typeText() {
-  if (charIndex < textToType.length) {
-    typingText.textContent += textToType.charAt(charIndex);
+  if (charIndex < phrases[phraseIndex].length) {
+    typingText.textContent += phrases[phraseIndex].charAt(charIndex);
     charIndex++;
     setTimeout(typeText, 50);
+  } else {
+    setTimeout(eraseText, 2000);
+  }
+}
+
+function eraseText() {
+  if (charIndex > 0) {
+    typingText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseText, 30);
+  } else {
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    setTimeout(typeText, 500);
   }
 }
 
@@ -114,7 +132,7 @@ const typingObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       typeText();
-      typingObserver.disconnect();
+      // Don't disconnect observer to keep animation running when scrolling back
     }
   });
 }, { threshold: 0.5 });
