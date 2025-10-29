@@ -23,6 +23,7 @@
   position: relative;
   background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
