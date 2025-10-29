@@ -328,6 +328,8 @@ img, svg, video {
   border-color: var(--accent);
   box-shadow: 0 0 0 4px var(--primary), 0 7px 36px rgba(36,77,201,0.18);
   z-index: 1;
+  background: linear-gradient(rgba(15, 21, 38, 0.97), rgba(15, 21, 38, 0.97)),
+              radial-gradient(circle at top right, var(--accent), transparent 70%);
 }
 
 /* Timeline */
@@ -382,16 +384,18 @@ img, svg, video {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 0;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   display: grid;
   place-items: center;
   background: linear-gradient(180deg, var(--primary), var(--primary-600));
   color: white;
   cursor: pointer;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-1), 0 0 15px rgba(108,140,255,0.2);
   opacity: 0;
   pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
+  transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .back-to-top.visible {
@@ -519,6 +523,12 @@ img, svg, video {
 .btn:focus-visible {
   outline: none;
   box-shadow: var(--ring);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: saturate(0.8);
 }
 
 .btn-ghost {

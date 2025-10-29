@@ -74,8 +74,18 @@ if (form) {
 
     if (!isValid) return;
 
-    alert('Thanks for your message! This demo only validates locally.');
-    form.reset();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Simulate sending (since this is client-side only)
+    setTimeout(() => {
+      alert('Thanks for your message! This demo only validates locally.');
+      form.reset();
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }, 1000);
   });
 }
 
